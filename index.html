@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LDA Wordcloud Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    h1 { text-align: center; margin-top: 80px; transition: margin-top 0.3s; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      margin-bottom: 3em;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 340px;
+      text-align: center;
+      padding: 1em;
+    }
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: zoom-in;
+      transition: transform 0.2s;
+    }
+    .card img:active {
+      transform: scale(1.4);
+      cursor: zoom-out;
+    }
+    .label { margin-top: 0.5em; font-weight: bold; }
+    .group {
+      margin-top: 3em;
+      width: 100%;
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+    }
+
+    /* Sticky nav bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(51, 51, 51, 0.8);
+      backdrop-filter: blur(4px);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    .navbar.shrink {
+      height: 45px;
+      background-color: rgba(30, 30, 30, 0.85);
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .navbar a:hover {
+      color: #00c4ff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar" id="navbar">
+  <a href="#combined">Combined</a>
+  <a href="#negative">Negative</a>
+  <a href="#high">High</a>
+  <a href="#low">Low</a>
+</div>
+
+<h1>Interactive LDA Wordcloud Gallery</h1>
+
+<!-- ===================== COMBINED ===================== -->
+<div id="combined" class="group">Combined Topics</div>
+<div class="gallery">
+  <div class="card"><img src="figures/combined_topic1_wordcloud.png"><div class="label">T1: AT for Recreation and Daily Living</div></div>
+  <div class="card"><img src="figures/combined_topic2_wordcloud.png"><div class="label">T2: Dating, Intimacy, and Sexuality</div></div>
+  <div class="card"><img src="figures/combined_topic3_wordcloud.png"><div class="label">T3: Spasticity and Sleep Disturbance</div></div>
+  <div class="card"><img src="figures/combined_topic4_wordcloud.png"><div class="label">T4: Pain and Clinical Management</div></div>
+  <div class="card"><img src="figures/combined_topic5_wordcloud.png"><div class="label">T5: Diet, Bowel Management, and Respiratory Function</div></div>
+  <div class="card"><img src="figures/combined_topic6_wordcloud.png"><div class="label">T6: Sexual Function and Medication Use</div></div>
+  <div class="card"><img src="figures/combined_topic7_wordcloud.png"><div class="label">T7: Wheelchair Use, Transfers, and Travel</div></div>
+  <div class="card"><img src="figures/combined_topic8_wordcloud.png"><div class="label">T8: Education, Employment, and Resources</div></div>
+  <div class="card"><img src="figures/combined_topic9_wordcloud.png"><div class="label">T9: Hand Function and Experimental Interventions</div></div>
+  <div class="card"><img src="figures/combined_topic10_wordcloud.png"><div class="label">T10: Coping and Emotional Struggle</div></div>
+  <div class="card"><img src="figures/combined_topic11_wordcloud.png"><div class="label">T11: AT for Computer/Device Use</div></div>
+  <div class="card"><img src="figures/combined_topic12_wordcloud.png"><div class="label">T12: Insurance and Service Delivery</div></div>
+  <div class="card"><img src="figures/combined_topic13_wordcloud.png"><div class="label">T13: Family Support, Emotional Impact, and Injury Events</div></div>
+  <div class="card"><img src="figures/combined_topic14_wordcloud.png"><div class="label">T14: Bladder/Bowel Care and Complications</div></div>
+  <div class="card"><img src="figures/combined_topic15_wordcloud.png"><div class="label">T15: Navigating Experimental Therapies and Clinical Trials</div></div>
+  <div class="card"><img src="figures/combined_topic16_wordcloud.png"><div class="label">T16: Predicting Function Trajectories</div></div>
+  <div class="card"><img src="figures/combined_topic17_wordcloud.png"><div class="label">T17: Locomotor Function and Early-Stage Rehabilitation</div></div>
+</div>
+
+<!-- ===================== NEGATIVE ===================== -->
+<div id="negative" class="group">Negative Topics</div>
+<div class="gallery">
+  <div class="card"><img src="figures/negative_topic1_wordcloud.png"><div class="label">T1: Sleep Disruption, Fatigue, and Psychological Strain</div></div>
+  <div class="card"><img src="figures/negative_topic2_wordcloud.png"><div class="label">T2: Upper Extremity Surgery and Assessment</div></div>
+  <div class="card"><img src="figures/negative_topic3_wordcloud.png"><div class="label">T3: Coping, Identity Disruption, and Emotional Burden</div></div>
+  <div class="card"><img src="figures/negative_topic4_wordcloud.png"><div class="label">T4: Clinical Encounters and Coping with Reality</div></div>
+  <div class="card"><img src="figures/negative_topic5_wordcloud.png"><div class="label">T5: Pain, Spasticity, and Symptom Burden</div></div>
+  <div class="card"><img src="figures/negative_topic6_wordcloud.png"><div class="label">T6: Bladder/Bowel Routines and Life Impact</div></div>
+  <div class="card"><img src="figures/negative_topic7_wordcloud.png"><div class="label">T7: Upper Extremity Sensorimotor Function</div></div>
+</div>
+
+<!-- ===================== HIGH ===================== -->
+<div id="high" class="group">High Cervical Topics</div>
+<div class="gallery">
+  <div class="card"><img src="figures/high_topic1_wordcloud.png"><div class="label">T1: Wheelchair Use, Seating/Positioning and Home/Tech Setup</div></div>
+  <div class="card"><img src="figures/high_topic2_wordcloud.png"><div class="label">T2: Pain, Injury Recovery, and Psychosocial Adaptation</div></div>
+  <div class="card"><img src="figures/high_topic3_wordcloud.png"><div class="label">T3: Care Systems, Adaptation, and Medical Management</div></div>
+</div>
+
+<!-- ===================== LOW ===================== -->
+<div id="low" class="group">Low Cervical Topics</div>
+<div class="gallery">
+  <div class="card"><img src="figures/low_topic1_wordcloud.png"><div class="label">T1: Bladder/Bowel Management and Sexual Function</div></div>
+  <div class="card"><img src="figures/low_topic2_wordcloud.png"><div class="label">T2: Mobility, Hand Function, and Independence in Daily Life</div></div>
+  <div class="card"><img src="figures/low_topic3_wordcloud.png"><div class="label">T3: Life, Relationships, and Adjusting to Change</div></div>
+  <div class="card"><img src="figures/low_topic4_wordcloud.png"><div class="label">T4: Pain, Spasticity, and Recovery Processes</div></div>
+</div>
+
+<!-- Shrinking Navbar Script -->
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add('shrink');
+    } else {
+      navbar.classList.remove('shrink');
+    }
+  });
+</script>
+
+</body>
+</html>
